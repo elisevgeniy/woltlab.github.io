@@ -1,21 +1,21 @@
 ---
-title: Creating a simple package
+title: Создание простого плагина
 sidebar: sidebar
 permalink: getting-started_quick-start.html
 folder: getting-started
 ---
 
-## Setup and Requirements
+## Настройка и требования
 
-This guide will help you to create a simple package that provides a simple test
-page. It is nothing too fancy, but you can use it as the foundation for your
-next project.
+Это руководство поможет вам создать простой плагин, создающий простую тестувую страницу.
+В этом ничего сложного, но вы можете использовать его в качестве основы для своего
+следующего проекта..
 
-There are some requirements you should met before starting:
+Есть некоторые требования, с которыми вам необходимо ознакомиться перед началом:
 
-- Text editor with syntax highlighting for PHP, [Notepad++](https://notepad-plus-plus.org/) is a solid pick
- - `*.php` and `*.tpl` should be encoded with ANSI/ASCII
- - `*.xml` are always encoded with UTF-8, but omit the BOM (byte-order-mark)
+- Текстовый редактор с подсветкой синтаксиса для PHP, [Notepad++](https://notepad-plus-plus.org/) - это хороший выбор
+ - `*.php` and `*.tpl` должны иметь кодировку ANSI/ASCII
+ - `*.xml` всегда должны иметь кодировку UTF-8, но без BOM (byte-order-mark)
  - Use tabs instead of spaces to indent lines
  - It is recommended to set the tab width to `8` spaces, this is used in the entire software and will ease reading the source files
 - An active installation of WoltLab Suite 3
