@@ -5,7 +5,7 @@ permalink: getting-started_quick-start.html
 folder: getting-started
 ---
 
-## Настройка и требования
+## Требования и настройки
 
 Это руководство поможет вам создать простой плагин, создающий простую тестувую страницу.
 В этом ничего сложного, но вы можете использовать его в качестве основы для своего
@@ -16,18 +16,17 @@ folder: getting-started
 - Текстовый редактор с подсветкой синтаксиса для PHP, [Notepad++](https://notepad-plus-plus.org/) - это хороший выбор
  - `*.php` and `*.tpl` должны иметь кодировку ANSI/ASCII
  - `*.xml` всегда должны иметь кодировку UTF-8, но без BOM (byte-order-mark)
- - Use tabs instead of spaces to indent lines
- - It is recommended to set the tab width to `8` spaces, this is used in the entire software and will ease reading the source files
-- An active installation of WoltLab Suite 3
-- An application to create `*.tar` archives, e.g. [7-Zip](http://www.7-zip.org/) on Windows
+ - Используйте табы (tabs) вместо пробелов для отступов
+ - Рекомендуется установить ширину таба (отступа) в «8» пробелов, т.к. эта ширина используется во всем программном обеспечении и облегчит чтение исходных файлов
+- Установленный WoltLab Suite 3
+- Приложение для создания архивов `*.tar`, например, [7-Zip](http://www.7-zip.org/) для Windows
 
-## The package.xml File
+## Файл package.xml
 
-We want to create a simple page that will display the sentence "Hello World" embedded
-into the application frame. Create an empty directory in the workspace of your choice
-to start with.
+Мы хотим создать простую страницу, на которой будет отображаться предложение «Hello World»
+в окне приложения. Создайте пустой каталог, в котором вы хотите начать работать.
 
-Create a new file called `package.xml` and insert the code below:
+Создайте новый файл с именем `package.xml` и вставьте следующий код:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -57,19 +56,19 @@ Create a new file called `package.xml` and insert the code below:
 </package>
 ```
 
-There is an [entire chapter][package_package-xml] on the package system that explains what the code above
-does and how you can adjust it to fit your needs. For now we'll keep it as it is.
+В документации есть [целая глава][package_package-xml] которая объясняет, что код выше
+делает и как вы можете настроить его в соответствии с вашими потребностями. Но пока мы оставим его как есть.
 
-## The PHP Class
+## PHP класс
 
-The next step is to create the PHP class which will serve our page:
+Следующий шаг - создать класс PHP, который будет обслуживать нашу страницу:
 
-1. Create the directory `files` in the same directory where `package.xml` is located
-2. Open `files` and create the directory `lib`
-3. Open `lib` and create the directory `page`
-4. Within the directory `page`, please create the file `TestPage.class.php`
+1. Создайте каталог `files` в том же каталоге, где находится` package.xml`
+2. Откройте `files` и создайте каталог` lib`
+3. Откройте `lib` и создайте каталог` page`
+4. В директории `page`, создайте файл `TestPage.class.php`
 
-Copy and paste the following code into the `TestPage.class.php`:
+Скопируйте и вставьте следующий код в `TestPage.class.php`:
 
 ```php
 <?php
