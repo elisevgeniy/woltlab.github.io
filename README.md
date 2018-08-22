@@ -1,1 +1,1 @@
-Сгенерированные github pages: https://elisevgeniy.github.io/woltlab.github.io
+Сгенерированные github pages: http://woltlab.kusok-piro.ga
