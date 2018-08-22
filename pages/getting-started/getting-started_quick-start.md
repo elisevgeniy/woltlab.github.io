@@ -121,21 +121,22 @@ class TestPage extends AbstractPage {
 
 ```
 
-The class inherits from [wcf\page\AbstractPage](https://github.com/WoltLab/WCF/blob/master/wcfsetup/install/files/lib/page/AbstractPage.class.php), the default implementation of pages without form controls. It
-defines quite a few methods that will be automatically invoked in a specific order, for example `readParameters()` before `readData()` and finally `assignVariables()` to pass arbitrary values to the template.
 
-The property `$greet` is defined as `World`, but can optionally be populated through a GET variable (`index.php?test/&greet=You` would output `Hello You!`). This extra code illustrates the separation of data
-processing that takes place within all sort of pages, where all user-supplied data is read from within a single method. It helps organizing the code, but most of all it enforces a clean class logic that does not
-start reading user input at random places, including the risk to only escape the input of variable `$_GET['foo']` 4 out of 5 times.
+Класс наследуется от [wcf\page\AbstractPage](https://github.com/WoltLab/WCF/blob/master/wcfsetup/install/files/lib/page/AbstractPage.class.php), обеспечивающий базовую реализацию страниц без элементов управления форм (without form controls: поля ввода, кнопки и т.д.). 
+В нём определяется довольно много методов, которые будут автоматически вызываться в определенном порядке, например `readParameters()` перед `readData()` и, наконец, `assignVariables()` для передачи ваших значений в шаблон.
 
-Reading and processing the data is only half the story, now we need a template to display the actual content for our page. You don't need to specify it yourself, it will be automatically guessed based on your
-namespace and class name, you can [read more about it later](#appendixTemplateGuessing).
+Свойство `$greet` определяется как `World`, но может быть дополнительно заполнено через переменную GET (`index.php?test/&greet=You` выводит `Hello You!`). Этот дополнительный код иллюстрирует разделение обработки данных
+которое имеет место во всех видах страниц, где все предоставленные пользователем данные считываются одним методом (функцией). Это помогает организовать код, но более того - навязывает чистоту логики класса, которая не даёт 
+считывать ввод данных в случайных местах, включая риск избежать ввода переменной `$_GET['foo']` 4 из 5 раз. (including the risk to only escape the input of variable `$_GET['foo']` 4 out of 5 times.)
 
-Last but not least, you must not include the closing PHP tag `?>` at the end, it can cause PHP to break on whitespaces and is not required at all.
+Чтение и обработка данных являются только половиной истории, теперь нам нужен шаблон, чтобы отобразить фактическое содержимое для нашей страницы. 
+Вам не нужно определять его самим, это будет сделано автоматически на основе вашего пространства имен и названия класса. Вы сможете [прочесть больше об этом позже] (#appendixTemplateGuessing).
 
-## The Template
+И последнее, но не менее важное: вы не должны писать в конце закрывающий PHP-тег `?>`, так как это может привести к тому, что PHP будет разбиваться на области, а этого нам не нужно.
 
-Navigate back to the root directory of your package until you see both the `files` directory and the `package.xml`. Now create a directory called `templates`, open it and create the file `test.tpl`.
+## Шаблон
+
+Перейдите в корневой каталог вашего пакета, пока не увидите каталог `files` и `package.xml`. Теперь создайте каталог под названием `templates`, откройте его и создайте файл `test.tpl`.
 
 ```smarty
 {include file='header'}
@@ -147,12 +148,11 @@ Navigate back to the root directory of your package until you see both the `file
 {include file='footer'}
 ```
 
-Templates are a mixture of HTML and Smarty-like template scripting to overcome the static nature of raw HTML. The above code will display the phrase `Hello World!` in the application frame, just as any other
-page would render. The included templates `header` and `footer` are responsible for the majority of the overall page functionality, but offer a whole lot of customization abilities to influence their behavior and appearance.
+Шаблоны представляют собой смесь HTML и Smarty-подобных шаблонов для преодоления статической природы необработанного HTML. В приведенном выше коде будет отображаться фраза «Hello World!» в окне приложения, или другая переданная фраза. Включенные (included) шаблоны `header` и` footer` отвечают за большинство функций общей страницы, но предлагают множество возможностей настройки, что позволяет влиять на их поведение и внешний вид.
 
-## The Page Definition
+## Определение страницы
 
-The package now contains the PHP class and the matching template, but it is still missing the page definition. Please create the file `page.xml` in your project's root directory, thus on the same level as the `package.xml`.
+Пакет теперь содержит класс PHP и соответствующий шаблон, но до сих пор отсутствует определение страницы. Создайте файл `page.xml` в корневом каталоге вашего проекта, таким образом, на том же уровне, что и` package.xml`.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -161,17 +161,18 @@ The package now contains the PHP class and the matching template, but it is stil
 		<page identifier="com.example.test.Test">
 			<controller>wcf\page\TestPage</controller>
 			<name language="en">Test Page</name>
+			<name language="ru">Тетовая страница</name>
 			<pageType>system</pageType>
 		</page>
 	</import>
 </data>
 ```
 
-You can provide a lot more data for a page, including logical nesting and dedicated handler classes for display in menus.
+Вы можете использовать много возможностей при составлении шаблона страницы, включая логические вложенности и классы обработчиков для отображения в меню.
 
-## Building the Package
+## Сборка плагина
 
-If you have followed the above guidelines carefully, your package directory should now look like this:
+Если вы внимательно следовали приведенным выше рекомендациям, каталог пакетов должен выглядеть следующим образом:
 
 ```
 ├── files
