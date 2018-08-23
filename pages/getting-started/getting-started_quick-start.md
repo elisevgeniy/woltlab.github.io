@@ -185,26 +185,27 @@ class TestPage extends AbstractPage {
 │   └── test.tpl
 ```
 
-Both files and templates are archive-based package components, that deploy their payload using tar archives rather than adding the raw files to the package file. Please create the archive `files.tar` and add the contents of the `files/*` directory, but not the directory `files/` itself. Repeat the same process for the `templates` directory, but this time with the file name `templates.tar`. Place both files in the root of your project.
+И файлы и шаблоны - основанные на архиве компоненты плагина, которые развертывают их полезную нагрузку, используя архивы tar вместо того, чтобы добавить необработанные файлы к файлу пакета. Создайте архив `files.tar` и добавте в него все файлы из каталога `files/*`, но не сам каталог `files/`. Повторите тот же процесс для каталога `templates`, но в этот раз назовите архив `templates.tar`.  Поместите оба архива в корень каталога вашего проекта.
 
-Last but not least, create the package archive `com.example.test.tar` and add all the files listed below.
+
+Последнее по порядку, но не по важности: создайте архив плигина `com.example.test.tar`, и добавте в него все файлы, перечисленный ниже
 
 - `files.tar`
 - `package.xml`
 - `page.xml`
 - `templates.tar`
 
-The archive's filename can be anything you want, all though it is the general convention to use the package name itself for easier recognition.
+Имя архива может быть любым, но принято называть архив именем плагина (package name) для лёгкого распознавания.
 
-## Installation
+## Установка
 
-Open the Administration Control Panel and navigate to `Configuration > Packages > Install Package`, click on `Upload Package` and select the file `com.example.test.tar` from your disk. Follow the on-screen instructions until it has been successfully installed.
+Откройте Панель Администратора и перейдите в раздел: `Configuration > Packages > Install Package`, нажмите `Upload Package` и выберите файл `com.example.test.tar` с диска компютера. Следуте инструкциям на экране, пока плагин успешно не установится.
 
-Open a new browser tab and navigate to your newly created page. If WoltLab Suite is installed at `https://example.com/wsc/`, then the URL should read `https://example.com/wsc/index.php?test/`.
+Откройте новую вкладку браузера и перейдите на созданую плагином страницу. Если WoltLab Suite был установлен по адресу `https://example.com/wsc/`, тогда URL созданной страницы должен быть `https://example.com/wsc/index.php?test/`.
 
-Congratulations, you have just created your first package!
+Поздравляем! Вы создали свой первый плагин!
 
-## Developer Tools
+## Инструменты разработчика
 
 {% include callout.html content="This feature is available with WoltLab Suite 3.1 or newer only." type="warning" %}
 
