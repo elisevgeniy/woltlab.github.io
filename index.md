@@ -9,7 +9,7 @@ toc: false
 
 В этой документации объясняются основные функциональные возможности API и принципы создания собственных плагинов. От вас требуется некоторый опыт в [PHP](https://en.wikipedia.org/wiki/PHP), [ООП](https://en.wikipedia.org/wiki/Object-oriented_programming) и [MySQL](https://en.wikipedia.org/wiki/MySQL).
 
-Посмотрите [quick start tutorial][getting-started_quick-start], чтобы узнать больше.
+Посмотрите [краткое начальное руководство][getting-started_quick-start], чтобы узнать больше.
 
 ## О WoltLab Suite 3.1
 
