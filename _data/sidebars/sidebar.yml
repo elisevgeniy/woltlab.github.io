@@ -6,25 +6,25 @@ entries:
   version: 3.1
   folders:
 
-  - title: Getting Started
+  - title: Начало работы
     folderitems:
 
-    - title: Introduction
+    - title: Введение
       url: /index.html
       type: homepage
-    - title: Quick Start
+    - title: Краткое начальное руководство
       url: /getting-started_quick-start.html
 
   - title: PHP API
     folderitems:
 
-    - title: Pages
+    - title: Страницы
       url: /php_pages.html
-    - title: Database Objects
+    - title: Объекты БД
       url: /php_database-objects.html
-    - title: Database Access
+    - title: Доступ к БД
       url: /php_database-access.html
-    - title: Exceptions
+    - title: Исключения (Exceptions)
       url: /php_exceptions.html
 
     - subfolders:
@@ -32,19 +32,19 @@ entries:
       - title: API
         subfolderitems:
 
-        - title: Caches
+        - title: Кеш
           url: /php_api_caches.html
-        - title: Comments
+        - title: Комментарии
           url: /php_api_comments.html
-        - title: Cronjobs
+        - title: Планировщик задач (Cronjobs)
           url: /php_api_cronjobs.html
-        - title: Events
+        - title: События
           url: /php_api_events.html
         - title: Package Installation Plugins
           url: /php_api_package_installation_plugins.html
-        - title: User Notifications
+        - title: Пользовательские уведомления
           url: /php_api_user_notifications.html
-        - title: Sitemaps
+        - title: Карта сайта (Sitemaps)
           url: /php_api_sitemaps.html
 
     - title: Code Style
